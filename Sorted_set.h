@@ -1,8 +1,7 @@
 #ifndef __HEADER2_H
 #define __HEADER2_H
 
-typedef struct data_node DATA;
-typedef struct data_base DATABASE;
+#include "DataBase.h"
 
 #define MAX_LEVEL 5
 

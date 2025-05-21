@@ -1,16 +1,15 @@
+#include <stdlib.h>
 #include <string.h>
 #include "MyNoSQL.h"
+#include "String.h"
+#include "List.h"
+// #include "Sorted_set.h"
+// #include "Hash.h"
 
-
-// extern void FreeList(DATA *const data);
-// extern void FreeSortedSet(DATA *const data);
-
-DATABASE *NewDatabase(void)
-{
+DATABASE *NewDatabase(void) {
     DATABASE *new = (DATABASE *) malloc(sizeof(DATABASE));
     if (!new) exit(1);
-    for (int i = 0; i < NUMOFTYPE; i++)
-    {
+    for (int i = 0; i < NUMOFTYPE; i++) {
         new->datalist_head[i] = NULL;
         new->datalist_tail[i] = NULL;
         new->length[i] = 0;
@@ -18,45 +17,40 @@ DATABASE *NewDatabase(void)
     return new;
 }
 
-DATA *NewData(const char *const key)
-{
-    DATA *newdatanode = (DATA *) malloc(sizeof(DATA));
-    newdatanode->key = (char *) malloc((strlen(key)+1)*sizeof(char));
-    memcpy(newdatanode->key, key, strlen(key)+1);
-    newdatanode->value = NULL;
-    newdatanode->next = NULL;
-    return newdatanode;
-}
-
-DATA *SearchKey(const DATABASE *const database, const char *const key, const int datatype)
-{
-    DATA *tmp = NULL;
-    tmp = database->datalist_head[datatype];
-    while (tmp)
+static void FreeData(DATA *const data, DATA_TYPE datatype) {
+    switch (datatype)
     {
-        if (strcmp(tmp->key, key)==0) return tmp;
-        tmp = tmp->next;
+    case TYPE_STRING:
+        free(data->value);
+        data->value = NULL;
+        break;
+    case TYPE_LIST:
+        FreeList(data);
+        break;
+    // case TYPE_SORTEDSET:
+    //     FreeSortedSet(data);
+    //     break;
+    // case TYPE_HASH:
+    //     FreeHash(data);
+    //     break;
+    default:
+        break;
     }
-    return NULL;
+    free(data->key);
+    data->key = NULL;
 }
 
-int DEL(DATABASE *const database, const char *const key, const int datatype)
-{
+int DEL(DATABASE *const database, const char *const key, DATA_TYPE datatype) {
     size_t key_len = strlen(key)+1;
-    DATA *curr=NULL, *prev=NULL;
-    curr = database->datalist_head[datatype];
-    while (curr && strncmp(curr->key, key, key_len))
-    {
+    DATA *curr=database->datalist_head[datatype], *prev=NULL;
+    while (curr && strncmp(curr->key, key, key_len)) {
         prev = curr;
         curr = curr->next;
     }
     if (!curr) return 1;
-    if (curr == database->datalist_head[datatype])
-    {
-        database->datalist_head[datatype] = database->datalist_head[datatype]->next;
-    }
-    else
-    {
+    if (curr == database->datalist_head[datatype]) {
+        database->datalist_head[datatype] = curr->next;
+    } else {
         prev->next = curr->next;
     }
     FreeData(curr, datatype);
@@ -65,41 +59,51 @@ int DEL(DATABASE *const database, const char *const key, const int datatype)
     return 0;
 }
 
-void FreeData(DATA *const data, const int datatype)
-{
-    switch (datatype)
-    {
-    case TYPE_STRING:
-        free(data->value);
-        break;
-    case TYPE_LIST:
-        FreeList(data);
-        break;
-    case TYPE_SORTEDSET:
-        FreeSortedSet(data);
-        break;
-    case TYPE_HASH:
-        FreeHash(data);
-        break;
-    default:
-        break;
-    }
-    free(data->key);
-}
-
-void FreeDatabase(DATABASE *const database)
-{
-    for (int i = 0; i < NUMOFTYPE; i++)
-    {
+void FreeDatabase(DATABASE *database) {
+    for (int i = 0; i < NUMOFTYPE; i++) {
         DATA *curr = database->datalist_head[i];
         DATA *prev = NULL;
-        while (curr)
-        {
+        while (curr) {
             FreeData(curr, i);
             prev = curr;
             curr = curr->next;
             free(prev);
+            prev = NULL;
         }
     }
     free(database);
+    database = NULL;
 }
+
+/* String資料型態API */
+int SET(DATABASE *const database, const char *const key, const char *const value){
+    return _SET(database, key, value);
+}
+char *GET(const DATABASE *const database, const char *const key){
+    return _GET(database, key);
+}
+size_t SRANGE(const DATABASE *const database, long start, long end){
+    return _SRANGE(database, start, end);
+}
+
+/* List資料型態API */
+void LPUSH(DATABASE *const database, const char *const key, const char *const value) {
+    _LPUSH(database, key, value);
+}
+void RPUSH(DATABASE *const database, const char *const key, const char *const value) {
+    _RPUSH(database, key, value);
+}
+void LPOP(const DATABASE *const database, const char *const key) {
+    _LPOP(database, key);
+}
+void RPOP(const DATABASE *const database, const char *const key) {
+    _RPOP(database, key);
+}
+size_t LLen(const DATABASE *const database, const char *const key) {
+    return _LLen(database, key);
+}
+size_t LRANGE(const DATABASE *const database, const char *const key, long start, long end) {
+    return _LRANGE(database, key, start, end);
+}
+
+

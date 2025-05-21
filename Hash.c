@@ -1,7 +1,8 @@
-#include "MyNoSQL.h"
-#include "Hash.h"
 #include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include "MyNoSQL.h"
+#include "Hash.h"
 
 static size_t HashFcn(const char *const key, const size_t tablesize)
 {

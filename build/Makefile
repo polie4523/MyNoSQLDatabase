@@ -142,29 +142,29 @@ test/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
 .PHONY : test/fast
 
-Hash.o: Hash.c.o
-.PHONY : Hash.o
+DataBase.o: DataBase.c.o
+.PHONY : DataBase.o
 
 # target to build an object file
-Hash.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyNoSQL.dir/build.make CMakeFiles/MyNoSQL.dir/Hash.c.o
-.PHONY : Hash.c.o
+DataBase.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyNoSQL.dir/build.make CMakeFiles/MyNoSQL.dir/DataBase.c.o
+.PHONY : DataBase.c.o
 
-Hash.i: Hash.c.i
-.PHONY : Hash.i
+DataBase.i: DataBase.c.i
+.PHONY : DataBase.i
 
 # target to preprocess a source file
-Hash.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyNoSQL.dir/build.make CMakeFiles/MyNoSQL.dir/Hash.c.i
-.PHONY : Hash.c.i
+DataBase.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyNoSQL.dir/build.make CMakeFiles/MyNoSQL.dir/DataBase.c.i
+.PHONY : DataBase.c.i
 
-Hash.s: Hash.c.s
-.PHONY : Hash.s
+DataBase.s: DataBase.c.s
+.PHONY : DataBase.s
 
 # target to generate assembly for a file
-Hash.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyNoSQL.dir/build.make CMakeFiles/MyNoSQL.dir/Hash.c.s
-.PHONY : Hash.c.s
+DataBase.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyNoSQL.dir/build.make CMakeFiles/MyNoSQL.dir/DataBase.c.s
+.PHONY : DataBase.c.s
 
 List.o: List.c.o
 .PHONY : List.o
@@ -213,30 +213,6 @@ MyNoSQL.s: MyNoSQL.c.s
 MyNoSQL.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyNoSQL.dir/build.make CMakeFiles/MyNoSQL.dir/MyNoSQL.c.s
 .PHONY : MyNoSQL.c.s
-
-Sorted_set.o: Sorted_set.c.o
-.PHONY : Sorted_set.o
-
-# target to build an object file
-Sorted_set.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyNoSQL.dir/build.make CMakeFiles/MyNoSQL.dir/Sorted_set.c.o
-.PHONY : Sorted_set.c.o
-
-Sorted_set.i: Sorted_set.c.i
-.PHONY : Sorted_set.i
-
-# target to preprocess a source file
-Sorted_set.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyNoSQL.dir/build.make CMakeFiles/MyNoSQL.dir/Sorted_set.c.i
-.PHONY : Sorted_set.c.i
-
-Sorted_set.s: Sorted_set.c.s
-.PHONY : Sorted_set.s
-
-# target to generate assembly for a file
-Sorted_set.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyNoSQL.dir/build.make CMakeFiles/MyNoSQL.dir/Sorted_set.c.s
-.PHONY : Sorted_set.c.s
 
 String.o: String.c.o
 .PHONY : String.o
@@ -296,18 +272,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... MyNoSQL"
 	@echo "... test"
-	@echo "... Hash.o"
-	@echo "... Hash.i"
-	@echo "... Hash.s"
+	@echo "... DataBase.o"
+	@echo "... DataBase.i"
+	@echo "... DataBase.s"
 	@echo "... List.o"
 	@echo "... List.i"
 	@echo "... List.s"
 	@echo "... MyNoSQL.o"
 	@echo "... MyNoSQL.i"
 	@echo "... MyNoSQL.s"
-	@echo "... Sorted_set.o"
-	@echo "... Sorted_set.i"
-	@echo "... Sorted_set.s"
 	@echo "... String.o"
 	@echo "... String.i"
 	@echo "... String.s"

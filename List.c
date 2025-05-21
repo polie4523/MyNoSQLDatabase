@@ -1,11 +1,9 @@
-#include "MyNoSQL.h"
-#include "List.h"
 #include <string.h>
+#include <stdlib.h>
 #include <stdio.h>
+#include "List.h"
 
-
-DATA *NewList(DATABASE *const database, const char *const key)
-{
+static DATA *NewList(DATABASE *const database, const char *const key) {
     DATA *newnode = NewData(key);
     LIST *newlist = (LIST *) malloc(sizeof(LIST));
     if ((!newlist) || (!newnode)) exit(1);
@@ -13,14 +11,11 @@ DATA *NewList(DATABASE *const database, const char *const key)
     newlist->MostLeft = NULL;
     newlist->MostRight = NULL;
     newnode->value = (void *) newlist;
-    if (database->length[TYPE_LIST]==0)
-    {
+    if (database->length[TYPE_LIST]==0) {
         database->datalist_head[TYPE_LIST] = newnode;
         database->datalist_tail[TYPE_LIST] = newnode;
         database->length[TYPE_LIST] = 1;
-    }
-    else
-    {
+    } else {
         newnode->next = database->datalist_head[TYPE_LIST];
         database->datalist_head[TYPE_LIST] = newnode;
         (database->length[TYPE_LIST])++;
@@ -28,8 +23,7 @@ DATA *NewList(DATABASE *const database, const char *const key)
     return newnode;
 }
 
-void LPUSH(DATABASE *const database, const char *key, const char *value)
-{
+void _LPUSH(DATABASE *const database, const char *key, const char *const value) {
     BiNODE *newnode = (BiNODE *) malloc(sizeof(BiNODE));
     newnode->Value = (char *) malloc((strlen(value)+1)*sizeof(char));
     if ((!newnode->Value) || (!newnode)) exit(1);
@@ -38,16 +32,13 @@ void LPUSH(DATABASE *const database, const char *key, const char *value)
     DATA *tmp = SearchKey(database, key, TYPE_LIST);
     if (!tmp) tmp = NewList(database, key);
     LIST *tmp_list = (LIST *) tmp->value;
-    if (tmp_list->MostLeft==NULL)
-    {
+    if (tmp_list->MostLeft==NULL) {
         newnode->left = NULL;
         newnode->right = NULL;
         tmp_list->MostLeft = newnode;
         tmp_list->MostRight = newnode;
         tmp_list->Len = 1;
-    }
-    else
-    {
+    } else {
         newnode->left = NULL;
         newnode->right = tmp_list->MostLeft;
         tmp_list->MostLeft->left = newnode;
@@ -56,8 +47,7 @@ void LPUSH(DATABASE *const database, const char *key, const char *value)
     }
 }
 
-void RPUSH(DATABASE *const database, const char *key, const char *value)
-{
+void _RPUSH(DATABASE *const database, const char *key, const char *const value) {
     BiNODE *newnode = (BiNODE *) malloc(sizeof(BiNODE));
     newnode->Value = (char *) malloc((strlen(value)+1)*sizeof(char));
     if ((!newnode->Value) || (!newnode)) exit(1);
@@ -66,16 +56,13 @@ void RPUSH(DATABASE *const database, const char *key, const char *value)
     DATA *tmp = SearchKey(database, key, TYPE_LIST);
     if (!tmp) tmp = NewList(database, key);
     LIST *tmp_list = (LIST *) tmp->value;
-    if (tmp_list->MostRight==NULL)
-    {
+    if (tmp_list->MostRight==NULL) {
         newnode->right = NULL;
         newnode->left = NULL;
         tmp_list->MostRight = newnode;
         tmp_list->MostLeft = newnode;
         tmp_list->Len = 1;
-    }
-    else
-    {
+    } else {
         newnode->right = NULL;
         newnode->left = tmp_list->MostRight;
         tmp_list->MostRight->right = newnode;
@@ -84,16 +71,13 @@ void RPUSH(DATABASE *const database, const char *key, const char *value)
     }
 }
 
-void LPOP(const DATABASE *const database, const char *const key)
-{
+void _LPOP(const DATABASE *const database, const char *const key) {
     DATA *tmp = SearchKey(database, key, TYPE_LIST);
     if (!tmp) printf("No list is called by %s\n", key);
-    else
-    {
+    else {
         LIST *list = (LIST *) tmp->value;
         if (list->MostLeft==NULL) printf("*List is empty!*");
-        else
-        {
+        else {
             BiNODE *tmp = list->MostLeft;
             list->MostLeft = list->MostLeft->right;
             list->MostLeft->left = NULL;
@@ -105,16 +89,13 @@ void LPOP(const DATABASE *const database, const char *const key)
     }
 }
 
-void RPOP(const DATABASE *const database, const char *const key)
-{
+void _RPOP(const DATABASE *const database, const char *const key) {
     DATA *tmp = SearchKey(database, key, TYPE_LIST);
     if (!tmp) printf("No list is called by %s\n", key);
-    else
-    {
+    else {
         LIST *list = (LIST *) tmp->value;
         if (list->MostRight==NULL) printf("*List is empty!*");
-        else
-        {
+        else {
             BiNODE *tmp = list->MostRight;
             list->MostRight = list->MostRight->left;
             list->MostRight->right = NULL;
@@ -126,34 +107,14 @@ void RPOP(const DATABASE *const database, const char *const key)
     }
 }
 
-size_t LLen(const DATABASE *const database, const char *const key)
-{
+size_t _LLen(const DATABASE *const database, const char *const key) {
     DATA *tmp = SearchKey(database, key, TYPE_LIST);
     if (!tmp) return 0;
     LIST *list = (LIST *) tmp->value;
     return list->Len;
 }
 
-// int DeleteList(DATABASE *const database, const char *const key)
-// {
-//     LIST_NODE *current=listlist->Head, *previous=NULL;
-//     while (current!=NULL)
-//     {
-//         if (strcmp(current->List->Key, key)==0) break;
-//         previous = current;
-//         current = current->next;
-//     }
-//     if (current==NULL) return 1;
-//     if (current==listlist->Head) listlist->Head = listlist->Head->next;
-//     else previous->next = current->next;
-//     FreeList(current->List);
-//     free(current);
-//     listlist->Len--;
-//     return 0;
-// }
-
-size_t LRANGE(const DATABASE *const database, const char *key, long start, long end)
-{
+size_t _LRANGE(const DATABASE *const database, const char *const key, long start, long end) {
     /*left(start)------->right(end)*/
     DATA *tmp = SearchKey(database, key, TYPE_LIST);
     if (!tmp) return 0;
@@ -173,8 +134,7 @@ size_t LRANGE(const DATABASE *const database, const char *key, long start, long 
     printf("---------------------------\n");
     printf("(Left)\n");
     size_t num = start;
-    while (start_ptr!=end_ptr->right)
-    {
+    while (start_ptr!=end_ptr->right) {
         printf("%ld\t%s\n", num, start_ptr->Value);
         start_ptr = start_ptr->right;
         num++;
@@ -184,14 +144,10 @@ size_t LRANGE(const DATABASE *const database, const char *key, long start, long 
     return num;
 }
 
-
-
-void FreeList(DATA *const data)
-{
+void FreeList(DATA *const data) {
     LIST *list = (LIST *) data->value;
     BiNODE *curr = list->MostLeft, *prev=NULL;
-    while (curr)
-    {
+    while (curr) {
         prev = curr;
         curr = curr->right;
         free(prev->Value);

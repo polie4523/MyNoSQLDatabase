@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "stdio.h": "c",
+        "mynosql.h": "c",
+        "string.h": "c",
+        "database.h": "c",
+        "cstdlib": "c"
+    }
+}

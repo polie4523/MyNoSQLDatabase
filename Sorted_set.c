@@ -1,9 +1,10 @@
-#include "MyNoSQL.h"
-#include "Sorted_set.h"
 #include <string.h>
 #include <limits.h>
 #include <stdarg.h>
+#include <stdlib.h>
 #include <stdio.h>
+#include "MyNoSQL.h"
+#include "Sorted_set.h"
 
 int randomLevel(void)
 {

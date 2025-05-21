@@ -1,11 +1,10 @@
 #ifndef __HASH_H
 #define __HASH_H
 
+#include "DataBase.h"
 #define TABLE_SIZE 101
 #define LOAD_THERSHOLD 0.7
 
-typedef struct data_node DATA;
-typedef struct data_base DATABASE;
 
 typedef struct HashNode
 {

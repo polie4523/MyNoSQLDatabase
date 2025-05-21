@@ -83,10 +83,24 @@ CMakeFiles/MyNoSQL.dir/MyNoSQL.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/MyNoSQL.dir/MyNoSQL.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/polie4523/GithubRepo/MyNoSQLDatabase/MyNoSQL.c -o CMakeFiles/MyNoSQL.dir/MyNoSQL.c.s
 
+CMakeFiles/MyNoSQL.dir/DataBase.c.o: CMakeFiles/MyNoSQL.dir/flags.make
+CMakeFiles/MyNoSQL.dir/DataBase.c.o: /home/polie4523/GithubRepo/MyNoSQLDatabase/DataBase.c
+CMakeFiles/MyNoSQL.dir/DataBase.c.o: CMakeFiles/MyNoSQL.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/polie4523/GithubRepo/MyNoSQLDatabase/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/MyNoSQL.dir/DataBase.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/MyNoSQL.dir/DataBase.c.o -MF CMakeFiles/MyNoSQL.dir/DataBase.c.o.d -o CMakeFiles/MyNoSQL.dir/DataBase.c.o -c /home/polie4523/GithubRepo/MyNoSQLDatabase/DataBase.c
+
+CMakeFiles/MyNoSQL.dir/DataBase.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/MyNoSQL.dir/DataBase.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/polie4523/GithubRepo/MyNoSQLDatabase/DataBase.c > CMakeFiles/MyNoSQL.dir/DataBase.c.i
+
+CMakeFiles/MyNoSQL.dir/DataBase.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/MyNoSQL.dir/DataBase.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/polie4523/GithubRepo/MyNoSQLDatabase/DataBase.c -o CMakeFiles/MyNoSQL.dir/DataBase.c.s
+
 CMakeFiles/MyNoSQL.dir/String.c.o: CMakeFiles/MyNoSQL.dir/flags.make
 CMakeFiles/MyNoSQL.dir/String.c.o: /home/polie4523/GithubRepo/MyNoSQLDatabase/String.c
 CMakeFiles/MyNoSQL.dir/String.c.o: CMakeFiles/MyNoSQL.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/polie4523/GithubRepo/MyNoSQLDatabase/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/MyNoSQL.dir/String.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/polie4523/GithubRepo/MyNoSQLDatabase/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/MyNoSQL.dir/String.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/MyNoSQL.dir/String.c.o -MF CMakeFiles/MyNoSQL.dir/String.c.o.d -o CMakeFiles/MyNoSQL.dir/String.c.o -c /home/polie4523/GithubRepo/MyNoSQLDatabase/String.c
 
 CMakeFiles/MyNoSQL.dir/String.c.i: cmake_force
@@ -100,7 +114,7 @@ CMakeFiles/MyNoSQL.dir/String.c.s: cmake_force
 CMakeFiles/MyNoSQL.dir/List.c.o: CMakeFiles/MyNoSQL.dir/flags.make
 CMakeFiles/MyNoSQL.dir/List.c.o: /home/polie4523/GithubRepo/MyNoSQLDatabase/List.c
 CMakeFiles/MyNoSQL.dir/List.c.o: CMakeFiles/MyNoSQL.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/polie4523/GithubRepo/MyNoSQLDatabase/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/MyNoSQL.dir/List.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/polie4523/GithubRepo/MyNoSQLDatabase/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/MyNoSQL.dir/List.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/MyNoSQL.dir/List.c.o -MF CMakeFiles/MyNoSQL.dir/List.c.o.d -o CMakeFiles/MyNoSQL.dir/List.c.o -c /home/polie4523/GithubRepo/MyNoSQLDatabase/List.c
 
 CMakeFiles/MyNoSQL.dir/List.c.i: cmake_force
@@ -111,53 +125,23 @@ CMakeFiles/MyNoSQL.dir/List.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/MyNoSQL.dir/List.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/polie4523/GithubRepo/MyNoSQLDatabase/List.c -o CMakeFiles/MyNoSQL.dir/List.c.s
 
-CMakeFiles/MyNoSQL.dir/Sorted_set.c.o: CMakeFiles/MyNoSQL.dir/flags.make
-CMakeFiles/MyNoSQL.dir/Sorted_set.c.o: /home/polie4523/GithubRepo/MyNoSQLDatabase/Sorted_set.c
-CMakeFiles/MyNoSQL.dir/Sorted_set.c.o: CMakeFiles/MyNoSQL.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/polie4523/GithubRepo/MyNoSQLDatabase/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/MyNoSQL.dir/Sorted_set.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/MyNoSQL.dir/Sorted_set.c.o -MF CMakeFiles/MyNoSQL.dir/Sorted_set.c.o.d -o CMakeFiles/MyNoSQL.dir/Sorted_set.c.o -c /home/polie4523/GithubRepo/MyNoSQLDatabase/Sorted_set.c
-
-CMakeFiles/MyNoSQL.dir/Sorted_set.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/MyNoSQL.dir/Sorted_set.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/polie4523/GithubRepo/MyNoSQLDatabase/Sorted_set.c > CMakeFiles/MyNoSQL.dir/Sorted_set.c.i
-
-CMakeFiles/MyNoSQL.dir/Sorted_set.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/MyNoSQL.dir/Sorted_set.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/polie4523/GithubRepo/MyNoSQLDatabase/Sorted_set.c -o CMakeFiles/MyNoSQL.dir/Sorted_set.c.s
-
-CMakeFiles/MyNoSQL.dir/Hash.c.o: CMakeFiles/MyNoSQL.dir/flags.make
-CMakeFiles/MyNoSQL.dir/Hash.c.o: /home/polie4523/GithubRepo/MyNoSQLDatabase/Hash.c
-CMakeFiles/MyNoSQL.dir/Hash.c.o: CMakeFiles/MyNoSQL.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/polie4523/GithubRepo/MyNoSQLDatabase/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/MyNoSQL.dir/Hash.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/MyNoSQL.dir/Hash.c.o -MF CMakeFiles/MyNoSQL.dir/Hash.c.o.d -o CMakeFiles/MyNoSQL.dir/Hash.c.o -c /home/polie4523/GithubRepo/MyNoSQLDatabase/Hash.c
-
-CMakeFiles/MyNoSQL.dir/Hash.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/MyNoSQL.dir/Hash.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/polie4523/GithubRepo/MyNoSQLDatabase/Hash.c > CMakeFiles/MyNoSQL.dir/Hash.c.i
-
-CMakeFiles/MyNoSQL.dir/Hash.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/MyNoSQL.dir/Hash.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/polie4523/GithubRepo/MyNoSQLDatabase/Hash.c -o CMakeFiles/MyNoSQL.dir/Hash.c.s
-
 # Object files for target MyNoSQL
 MyNoSQL_OBJECTS = \
 "CMakeFiles/MyNoSQL.dir/MyNoSQL.c.o" \
+"CMakeFiles/MyNoSQL.dir/DataBase.c.o" \
 "CMakeFiles/MyNoSQL.dir/String.c.o" \
-"CMakeFiles/MyNoSQL.dir/List.c.o" \
-"CMakeFiles/MyNoSQL.dir/Sorted_set.c.o" \
-"CMakeFiles/MyNoSQL.dir/Hash.c.o"
+"CMakeFiles/MyNoSQL.dir/List.c.o"
 
 # External object files for target MyNoSQL
 MyNoSQL_EXTERNAL_OBJECTS =
 
 libMyNoSQL.a: CMakeFiles/MyNoSQL.dir/MyNoSQL.c.o
+libMyNoSQL.a: CMakeFiles/MyNoSQL.dir/DataBase.c.o
 libMyNoSQL.a: CMakeFiles/MyNoSQL.dir/String.c.o
 libMyNoSQL.a: CMakeFiles/MyNoSQL.dir/List.c.o
-libMyNoSQL.a: CMakeFiles/MyNoSQL.dir/Sorted_set.c.o
-libMyNoSQL.a: CMakeFiles/MyNoSQL.dir/Hash.c.o
 libMyNoSQL.a: CMakeFiles/MyNoSQL.dir/build.make
 libMyNoSQL.a: CMakeFiles/MyNoSQL.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/polie4523/GithubRepo/MyNoSQLDatabase/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C static library libMyNoSQL.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/polie4523/GithubRepo/MyNoSQLDatabase/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C static library libMyNoSQL.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/MyNoSQL.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MyNoSQL.dir/link.txt --verbose=$(VERBOSE)
 

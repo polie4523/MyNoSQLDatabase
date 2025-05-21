@@ -1,37 +1,23 @@
 #ifndef __MyNoSQL_H
 #define __MyNoSQL_H
 
-#include <stdlib.h>
-#include "String.h"
-#include "List.h"
-#include "Sorted_set.h"
-#include "Hash.h"
-
-#define NUMOFTYPE 4
-#define TYPE_STRING 0
-#define TYPE_LIST 1
-#define TYPE_SORTEDSET 2
-#define TYPE_HASH 3
-
-typedef struct data_node
-{
-    char *key;
-    void *value;
-    struct data_node *next;
-} DATA;
-
-typedef struct data_base
-{
-    DATA *datalist_head[NUMOFTYPE];
-    DATA *datalist_tail[NUMOFTYPE];
-    size_t length[NUMOFTYPE];
-} DATABASE;
+#include "DataBase.h"
 
 DATABASE *NewDatabase(void); //建立資料庫物件
-DATA *NewData(const char *const key);
-DATA *SearchKey(const DATABASE *const database, const char *const key, const int datatype);
-int DEL(DATABASE *const database, const char *const key, const int datatype);
-void FreeData(DATA *const data, const int datatype);
-void FreeDatabase(DATABASE *const database); //釋放資料庫物件
+int DEL(DATABASE *const database, const char *const key, DATA_TYPE datatype); // 刪除對應key的資料節點
+void FreeDatabase(DATABASE *database); //釋放資料庫物件
+
+/* String資料型態API */
+int SET(DATABASE *const database, const char *const key, const char *const value); // 建立新String
+char *GET(const DATABASE *const database, const char *const key); // 依照給定的key取得value
+size_t SRANGE(const DATABASE *const database, long start, long end); // 印出所有String
+
+/* List資料型態API */
+void LPUSH(DATABASE *const database, const char *const key, const char *const value); // 在給定key的list最左邊push新資料
+void RPUSH(DATABASE *const database, const char *const key, const char *const value); // 在給定key的list最右邊push新資料
+void LPOP(const DATABASE *const database, const char *const key); // 在給定key的list最左邊pop資料
+void RPOP(const DATABASE *const database, const char *const key); // 在給定key的list最右邊pop資料
+size_t LLen(const DATABASE *const database, const char *const key); // 回傳給定key的list長度
+size_t LRANGE(const DATABASE *const database, const char *const key, long start, long end); // 印出給定key的list的指定索引範圍內容
 
 #endif
