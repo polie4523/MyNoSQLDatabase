@@ -1,0 +1,2 @@
+/usr/bin/ar qc libMyNoSQL.a CMakeFiles/MyNoSQL.dir/MyNoSQL.c.o CMakeFiles/MyNoSQL.dir/String.c.o CMakeFiles/MyNoSQL.dir/List.c.o CMakeFiles/MyNoSQL.dir/Sorted_set.c.o CMakeFiles/MyNoSQL.dir/Hash.c.o
+/usr/bin/ranlib libMyNoSQL.a
