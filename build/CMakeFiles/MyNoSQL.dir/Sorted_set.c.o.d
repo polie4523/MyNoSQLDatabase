@@ -59,9 +59,5 @@ CMakeFiles/MyNoSQL.dir/Sorted_set.c.o: \
  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
  /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
- /home/polie4523/GithubRepo/MyNoSQLDatabase/MyNoSQL.h \
- /home/polie4523/GithubRepo/MyNoSQLDatabase/DataBase.h \
- /home/polie4523/GithubRepo/MyNoSQLDatabase/String.h \
- /home/polie4523/GithubRepo/MyNoSQLDatabase/List.h \
  /home/polie4523/GithubRepo/MyNoSQLDatabase/Sorted_set.h \
- /home/polie4523/GithubRepo/MyNoSQLDatabase/Hash.h
+ /home/polie4523/GithubRepo/MyNoSQLDatabase/DataBase.h

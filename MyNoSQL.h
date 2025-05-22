@@ -20,4 +20,14 @@ void RPOP(const DATABASE *const database, const char *const key); // 在給定ke
 size_t LLen(const DATABASE *const database, const char *const key); // 回傳給定key的list長度
 size_t LRANGE(const DATABASE *const database, const char *const key, long start, long end); // 印出給定key的list的指定索引範圍內容
 
+/* Sorted Set資料型態API */
+int ZADD(DATABASE *const database, const char *const key, const double score, const char *const name); // 新增sorted set的元素
+size_t ZCARD(const DATABASE *const database, const char *const key); // 回傳全部sorted set的元素數量
+size_t ZCOUNT(const DATABASE *const database, const char *const key, const double min, const double max); // 回傳給定分數範圍的sorted set的元素數量
+size_t ZRANGE(const DATABASE *const database, const char *const key, long start, long stop); // 印出給定索引範圍的sorted set的元素
+size_t ZRANGEBYSCORE(const DATABASE *const database, const char *const key, const double min, const double max); // 印出給定分數範圍的sorted set的元素
+size_t ZRANK(const DATABASE *const database, const char *const key, const char *const name); // 回傳給定名字的sorted set的元素索引
+int ZREM(const DATABASE *const database, const char *const key, const char *const name); // 刪除給定名字的sorted set的元素
+int ZREMRANGEBYSCORE(const DATABASE *const database, const char *const key, const double min, const double max); // 刪除給定分數範圍的sorted set的元素
+
 #endif

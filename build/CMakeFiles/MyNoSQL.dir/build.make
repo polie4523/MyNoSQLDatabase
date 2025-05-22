@@ -125,12 +125,27 @@ CMakeFiles/MyNoSQL.dir/List.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/MyNoSQL.dir/List.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/polie4523/GithubRepo/MyNoSQLDatabase/List.c -o CMakeFiles/MyNoSQL.dir/List.c.s
 
+CMakeFiles/MyNoSQL.dir/Sorted_set.c.o: CMakeFiles/MyNoSQL.dir/flags.make
+CMakeFiles/MyNoSQL.dir/Sorted_set.c.o: /home/polie4523/GithubRepo/MyNoSQLDatabase/Sorted_set.c
+CMakeFiles/MyNoSQL.dir/Sorted_set.c.o: CMakeFiles/MyNoSQL.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/polie4523/GithubRepo/MyNoSQLDatabase/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/MyNoSQL.dir/Sorted_set.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/MyNoSQL.dir/Sorted_set.c.o -MF CMakeFiles/MyNoSQL.dir/Sorted_set.c.o.d -o CMakeFiles/MyNoSQL.dir/Sorted_set.c.o -c /home/polie4523/GithubRepo/MyNoSQLDatabase/Sorted_set.c
+
+CMakeFiles/MyNoSQL.dir/Sorted_set.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/MyNoSQL.dir/Sorted_set.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/polie4523/GithubRepo/MyNoSQLDatabase/Sorted_set.c > CMakeFiles/MyNoSQL.dir/Sorted_set.c.i
+
+CMakeFiles/MyNoSQL.dir/Sorted_set.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/MyNoSQL.dir/Sorted_set.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/polie4523/GithubRepo/MyNoSQLDatabase/Sorted_set.c -o CMakeFiles/MyNoSQL.dir/Sorted_set.c.s
+
 # Object files for target MyNoSQL
 MyNoSQL_OBJECTS = \
 "CMakeFiles/MyNoSQL.dir/MyNoSQL.c.o" \
 "CMakeFiles/MyNoSQL.dir/DataBase.c.o" \
 "CMakeFiles/MyNoSQL.dir/String.c.o" \
-"CMakeFiles/MyNoSQL.dir/List.c.o"
+"CMakeFiles/MyNoSQL.dir/List.c.o" \
+"CMakeFiles/MyNoSQL.dir/Sorted_set.c.o"
 
 # External object files for target MyNoSQL
 MyNoSQL_EXTERNAL_OBJECTS =
@@ -139,9 +154,10 @@ libMyNoSQL.a: CMakeFiles/MyNoSQL.dir/MyNoSQL.c.o
 libMyNoSQL.a: CMakeFiles/MyNoSQL.dir/DataBase.c.o
 libMyNoSQL.a: CMakeFiles/MyNoSQL.dir/String.c.o
 libMyNoSQL.a: CMakeFiles/MyNoSQL.dir/List.c.o
+libMyNoSQL.a: CMakeFiles/MyNoSQL.dir/Sorted_set.c.o
 libMyNoSQL.a: CMakeFiles/MyNoSQL.dir/build.make
 libMyNoSQL.a: CMakeFiles/MyNoSQL.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/polie4523/GithubRepo/MyNoSQLDatabase/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C static library libMyNoSQL.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/polie4523/GithubRepo/MyNoSQLDatabase/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C static library libMyNoSQL.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/MyNoSQL.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MyNoSQL.dir/link.txt --verbose=$(VERBOSE)
 

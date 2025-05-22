@@ -214,6 +214,30 @@ MyNoSQL.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyNoSQL.dir/build.make CMakeFiles/MyNoSQL.dir/MyNoSQL.c.s
 .PHONY : MyNoSQL.c.s
 
+Sorted_set.o: Sorted_set.c.o
+.PHONY : Sorted_set.o
+
+# target to build an object file
+Sorted_set.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyNoSQL.dir/build.make CMakeFiles/MyNoSQL.dir/Sorted_set.c.o
+.PHONY : Sorted_set.c.o
+
+Sorted_set.i: Sorted_set.c.i
+.PHONY : Sorted_set.i
+
+# target to preprocess a source file
+Sorted_set.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyNoSQL.dir/build.make CMakeFiles/MyNoSQL.dir/Sorted_set.c.i
+.PHONY : Sorted_set.c.i
+
+Sorted_set.s: Sorted_set.c.s
+.PHONY : Sorted_set.s
+
+# target to generate assembly for a file
+Sorted_set.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyNoSQL.dir/build.make CMakeFiles/MyNoSQL.dir/Sorted_set.c.s
+.PHONY : Sorted_set.c.s
+
 String.o: String.c.o
 .PHONY : String.o
 
@@ -281,6 +305,9 @@ help:
 	@echo "... MyNoSQL.o"
 	@echo "... MyNoSQL.i"
 	@echo "... MyNoSQL.s"
+	@echo "... Sorted_set.o"
+	@echo "... Sorted_set.i"
+	@echo "... Sorted_set.s"
 	@echo "... String.o"
 	@echo "... String.i"
 	@echo "... String.s"

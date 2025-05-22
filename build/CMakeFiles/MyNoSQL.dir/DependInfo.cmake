@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/polie4523/GithubRepo/MyNoSQLDatabase/DataBase.c" "CMakeFiles/MyNoSQL.dir/DataBase.c.o" "gcc" "CMakeFiles/MyNoSQL.dir/DataBase.c.o.d"
   "/home/polie4523/GithubRepo/MyNoSQLDatabase/List.c" "CMakeFiles/MyNoSQL.dir/List.c.o" "gcc" "CMakeFiles/MyNoSQL.dir/List.c.o.d"
   "/home/polie4523/GithubRepo/MyNoSQLDatabase/MyNoSQL.c" "CMakeFiles/MyNoSQL.dir/MyNoSQL.c.o" "gcc" "CMakeFiles/MyNoSQL.dir/MyNoSQL.c.o.d"
+  "/home/polie4523/GithubRepo/MyNoSQLDatabase/Sorted_set.c" "CMakeFiles/MyNoSQL.dir/Sorted_set.c.o" "gcc" "CMakeFiles/MyNoSQL.dir/Sorted_set.c.o.d"
   "/home/polie4523/GithubRepo/MyNoSQLDatabase/String.c" "CMakeFiles/MyNoSQL.dir/String.c.o" "gcc" "CMakeFiles/MyNoSQL.dir/String.c.o.d"
   )
 

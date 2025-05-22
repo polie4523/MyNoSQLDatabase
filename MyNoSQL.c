@@ -3,7 +3,7 @@
 #include "MyNoSQL.h"
 #include "String.h"
 #include "List.h"
-// #include "Sorted_set.h"
+#include "Sorted_set.h"
 // #include "Hash.h"
 
 DATABASE *NewDatabase(void) {
@@ -27,9 +27,9 @@ static void FreeData(DATA *const data, DATA_TYPE datatype) {
     case TYPE_LIST:
         FreeList(data);
         break;
-    // case TYPE_SORTEDSET:
-    //     FreeSortedSet(data);
-    //     break;
+    case TYPE_SORTEDSET:
+        FreeSortedSet(data);
+        break;
     // case TYPE_HASH:
     //     FreeHash(data);
     //     break;
@@ -106,4 +106,28 @@ size_t LRANGE(const DATABASE *const database, const char *const key, long start,
     return _LRANGE(database, key, start, end);
 }
 
-
+/* Sorted_set資料型態API */
+int ZADD(DATABASE *const database, const char *const key, const double score, const char *const name) {
+    return _ZADD(database, key, score, name);
+}
+size_t ZCARD(const DATABASE *const database, const char *const key) {
+    return _ZCARD(database, key);
+}
+size_t ZCOUNT(const DATABASE *const database, const char *const key, const double min, const double max) {
+    return _ZCOUNT(database, key, min, max);
+}
+size_t ZRANGE(const DATABASE *const database, const char *const key, long start, long stop) {
+    return _ZRANGE(database, key, start, stop);
+}
+size_t ZRANGEBYSCORE(const DATABASE *const database, const char *const key, const double min, const double max) {
+    return _ZRANGEBYSCORE(database, key, min, max);
+}
+size_t ZRANK(const DATABASE *const database, const char *const key, const char *const name) {
+    return _ZRANK(database, key, name);
+}
+int ZREM(const DATABASE *const database, const char *const key, const char *const name) {
+    return _ZREM(database, key, name);
+}
+int ZREMRANGEBYSCORE(const DATABASE *const database, const char *const key, const double min, const double max) {
+    return _ZREMRANGEBYSCORE(database, key, min, max);
+}

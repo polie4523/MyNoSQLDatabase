@@ -6,7 +6,7 @@ set(SOURCE_FILES
     DataBase.c
     String.c
     List.c 
-    # Sorted_set.c
+    Sorted_set.c
     # Hash.c
 )
 add_library(MyNoSQL ${SOURCE_FILES})
