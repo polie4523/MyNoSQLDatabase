@@ -47,4 +47,5 @@ CMakeFiles/MyNoSQL.dir/MyNoSQL.c.o: \
  /home/polie4523/GithubRepo/MyNoSQLDatabase/DataBase.h \
  /home/polie4523/GithubRepo/MyNoSQLDatabase/String.h \
  /home/polie4523/GithubRepo/MyNoSQLDatabase/List.h \
- /home/polie4523/GithubRepo/MyNoSQLDatabase/Sorted_set.h
+ /home/polie4523/GithubRepo/MyNoSQLDatabase/Sorted_set.h \
+ /home/polie4523/GithubRepo/MyNoSQLDatabase/Hash.h

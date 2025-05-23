@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/test_MyNoSQL.dir/test_MyNoSQL.c.o -o test_MyNoSQL  libMyNoSQL.a 

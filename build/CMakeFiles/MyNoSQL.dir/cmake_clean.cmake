@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/MyNoSQL.dir/DataBase.c.o"
   "CMakeFiles/MyNoSQL.dir/DataBase.c.o.d"
+  "CMakeFiles/MyNoSQL.dir/Hash.c.o"
+  "CMakeFiles/MyNoSQL.dir/Hash.c.o.d"
   "CMakeFiles/MyNoSQL.dir/List.c.o"
   "CMakeFiles/MyNoSQL.dir/List.c.o.d"
   "CMakeFiles/MyNoSQL.dir/MyNoSQL.c.o"

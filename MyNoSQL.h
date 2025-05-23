@@ -30,4 +30,9 @@ size_t ZRANK(const DATABASE *const database, const char *const key, const char *
 int ZREM(const DATABASE *const database, const char *const key, const char *const name); // 刪除給定名字的sorted set的元素
 int ZREMRANGEBYSCORE(const DATABASE *const database, const char *const key, const double min, const double max); // 刪除給定分數範圍的sorted set的元素
 
+/* Hash資料型態API */
+void HSET(DATABASE *const database, const char *const key, const char *const field, const char *const value); // 新增hash的元素
+char *HGET(const DATABASE *const database, const char *const key, const char *const field); // 依照給定的key取得value
+int HDEL(DATABASE *const database, const char *const key, const char *const field); // 刪除hash的元素
+
 #endif

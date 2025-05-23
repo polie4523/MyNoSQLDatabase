@@ -4,7 +4,7 @@
 #include "String.h"
 #include "List.h"
 #include "Sorted_set.h"
-// #include "Hash.h"
+#include "Hash.h"
 
 DATABASE *NewDatabase(void) {
     DATABASE *new = (DATABASE *) malloc(sizeof(DATABASE));
@@ -30,9 +30,9 @@ static void FreeData(DATA *const data, DATA_TYPE datatype) {
     case TYPE_SORTEDSET:
         FreeSortedSet(data);
         break;
-    // case TYPE_HASH:
-    //     FreeHash(data);
-    //     break;
+    case TYPE_HASH:
+        FreeHash(data);
+        break;
     default:
         break;
     }
@@ -130,4 +130,15 @@ int ZREM(const DATABASE *const database, const char *const key, const char *cons
 }
 int ZREMRANGEBYSCORE(const DATABASE *const database, const char *const key, const double min, const double max) {
     return _ZREMRANGEBYSCORE(database, key, min, max);
+}
+
+/* Hash資料型態API */
+void HSET(DATABASE *const database, const char *const key, const char *const field, const char *const value) {
+    _HSET(database, key, field, value);
+}
+char *HGET(const DATABASE *const database, const char *const key, const char *const field) {
+    return _HGET(database, key, field);
+}
+int HDEL(DATABASE *const database, const char *const key, const char *const field) {
+    return _HDEL(database, key, field);
 }

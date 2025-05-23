@@ -52,9 +52,5 @@ CMakeFiles/MyNoSQL.dir/Hash.c.o: \
  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /home/polie4523/GithubRepo/MyNoSQLDatabase/MyNoSQL.h \
- /home/polie4523/GithubRepo/MyNoSQLDatabase/DataBase.h \
- /home/polie4523/GithubRepo/MyNoSQLDatabase/String.h \
- /home/polie4523/GithubRepo/MyNoSQLDatabase/List.h \
- /home/polie4523/GithubRepo/MyNoSQLDatabase/Sorted_set.h \
- /home/polie4523/GithubRepo/MyNoSQLDatabase/Hash.h
+ /home/polie4523/GithubRepo/MyNoSQLDatabase/Hash.h \
+ /home/polie4523/GithubRepo/MyNoSQLDatabase/DataBase.h

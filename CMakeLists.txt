@@ -7,8 +7,8 @@ set(SOURCE_FILES
     String.c
     List.c 
     Sorted_set.c
-    # Hash.c
+    Hash.c
 )
 add_library(MyNoSQL ${SOURCE_FILES})
-add_executable(test test.c)
-target_link_libraries(test MyNoSQL)
+add_executable(test_MyNoSQL test_MyNoSQL.c)
+target_link_libraries(test_MyNoSQL MyNoSQL)

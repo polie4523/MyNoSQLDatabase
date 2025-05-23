@@ -130,17 +130,17 @@ MyNoSQL/fast:
 .PHONY : MyNoSQL/fast
 
 #=============================================================================
-# Target rules for targets named test
+# Target rules for targets named test_MyNoSQL
 
 # Build rule for target.
-test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test
-.PHONY : test
+test_MyNoSQL: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_MyNoSQL
+.PHONY : test_MyNoSQL
 
 # fast build rule for target.
-test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
-.PHONY : test/fast
+test_MyNoSQL/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_MyNoSQL.dir/build.make CMakeFiles/test_MyNoSQL.dir/build
+.PHONY : test_MyNoSQL/fast
 
 DataBase.o: DataBase.c.o
 .PHONY : DataBase.o
@@ -165,6 +165,30 @@ DataBase.s: DataBase.c.s
 DataBase.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyNoSQL.dir/build.make CMakeFiles/MyNoSQL.dir/DataBase.c.s
 .PHONY : DataBase.c.s
+
+Hash.o: Hash.c.o
+.PHONY : Hash.o
+
+# target to build an object file
+Hash.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyNoSQL.dir/build.make CMakeFiles/MyNoSQL.dir/Hash.c.o
+.PHONY : Hash.c.o
+
+Hash.i: Hash.c.i
+.PHONY : Hash.i
+
+# target to preprocess a source file
+Hash.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyNoSQL.dir/build.make CMakeFiles/MyNoSQL.dir/Hash.c.i
+.PHONY : Hash.c.i
+
+Hash.s: Hash.c.s
+.PHONY : Hash.s
+
+# target to generate assembly for a file
+Hash.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyNoSQL.dir/build.make CMakeFiles/MyNoSQL.dir/Hash.c.s
+.PHONY : Hash.c.s
 
 List.o: List.c.o
 .PHONY : List.o
@@ -262,29 +286,29 @@ String.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyNoSQL.dir/build.make CMakeFiles/MyNoSQL.dir/String.c.s
 .PHONY : String.c.s
 
-test.o: test.c.o
-.PHONY : test.o
+test_MyNoSQL.o: test_MyNoSQL.c.o
+.PHONY : test_MyNoSQL.o
 
 # target to build an object file
-test.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.c.o
-.PHONY : test.c.o
+test_MyNoSQL.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_MyNoSQL.dir/build.make CMakeFiles/test_MyNoSQL.dir/test_MyNoSQL.c.o
+.PHONY : test_MyNoSQL.c.o
 
-test.i: test.c.i
-.PHONY : test.i
+test_MyNoSQL.i: test_MyNoSQL.c.i
+.PHONY : test_MyNoSQL.i
 
 # target to preprocess a source file
-test.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.c.i
-.PHONY : test.c.i
+test_MyNoSQL.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_MyNoSQL.dir/build.make CMakeFiles/test_MyNoSQL.dir/test_MyNoSQL.c.i
+.PHONY : test_MyNoSQL.c.i
 
-test.s: test.c.s
-.PHONY : test.s
+test_MyNoSQL.s: test_MyNoSQL.c.s
+.PHONY : test_MyNoSQL.s
 
 # target to generate assembly for a file
-test.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.c.s
-.PHONY : test.c.s
+test_MyNoSQL.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_MyNoSQL.dir/build.make CMakeFiles/test_MyNoSQL.dir/test_MyNoSQL.c.s
+.PHONY : test_MyNoSQL.c.s
 
 # Help Target
 help:
@@ -295,10 +319,13 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... MyNoSQL"
-	@echo "... test"
+	@echo "... test_MyNoSQL"
 	@echo "... DataBase.o"
 	@echo "... DataBase.i"
 	@echo "... DataBase.s"
+	@echo "... Hash.o"
+	@echo "... Hash.i"
+	@echo "... Hash.s"
 	@echo "... List.o"
 	@echo "... List.i"
 	@echo "... List.s"
@@ -311,9 +338,9 @@ help:
 	@echo "... String.o"
 	@echo "... String.i"
 	@echo "... String.s"
-	@echo "... test.o"
-	@echo "... test.i"
-	@echo "... test.s"
+	@echo "... test_MyNoSQL.o"
+	@echo "... test_MyNoSQL.i"
+	@echo "... test_MyNoSQL.s"
 .PHONY : help
 
 

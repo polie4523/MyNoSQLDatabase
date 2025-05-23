@@ -1,5 +1,5 @@
-#ifndef __HEADER2_H
-#define __HEADER2_H
+#ifndef __SORTEDSET_H
+#define __SORTEDSET_H
 
 #include "DataBase.h"
 
